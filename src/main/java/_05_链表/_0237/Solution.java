@@ -1,5 +1,7 @@
 package _05_链表._0237;
 
+import data.struct.linked.ListNode;
+
 public class Solution {
     ListNode head;
 
@@ -13,18 +15,6 @@ public class Solution {
         }
         node.val = node.next.val;
         node.next = node.next.next;
-    }
-}
-
-/**
- * Definition for singly-linked list.
- */
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
     }
 }
 

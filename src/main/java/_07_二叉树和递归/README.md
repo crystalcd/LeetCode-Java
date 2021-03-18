@@ -57,39 +57,77 @@ class TreeNode {
 #### 深度优先遍历
 
 ##### 前序遍历
-
+对于当前结点，先输出该结点，然后输出它的左孩子，最后输出它的右孩子
 ```java
 void preorder(TreeNode root){
-        if(root!=null) {
-            System.out.println(root.val);
-            preorder(root.left);
-            preorder(root.right);
+        if(root==null) {
+        return;
         }
-}
+        System.out.print(root.val);
+        preorder(root.left);
+        preorder(root.right);
+        }
+        // 前序遍历 非递归
+        void preorderNonRec(TreeNode root) {
+        if(root == null) {
+        return;
+        }
+        System.out.println("前序遍历非递归");
+        Stack<TreeNode> s = new Stack<>();
+        while(!s.empty()||root!=null) {// 栈中有元素或者root还是节点
+        while(root!=null) {
+        System.out.print(root.val); // 输出当前节点
+        s.push(root);
+        root = root.left; // 然后输出左孩子
+        } // 循环结束 左孩子输出结束
+        root = s.pop().right; // 输出右孩子
+
+        }
+        }
 ```
 
 ##### 中序遍历
-
+对于当前结点，先输出它的左孩子，然后输出该结点，最后输出它的右孩子
 ```java
-void inorder(TreeNode root){
-        if(root!=null) {
-        inorder(root.left);
-        System.out.print(root.val);
-        inorder(root.right);
+// 中序遍历 递归
+    void inorder(TreeNode root){
+            if(root==null) {
+            return;
+            }
+            inorder(root.left);
+            System.out.print(root.val);
+            inorder(root.right);
+            }
+            // 中序遍历 非递归
+            void inorderNonRec(TreeNode root) {
+            if(root == null) {
+            return;
+            }
+            System.out.println("中序遍历非递归");
+            Stack<TreeNode> s = new Stack<>();
+        while(!s.empty()||root!=null) {
+        while(root!=null) {
+        s.push(root);
+        root = root.left;
+        } // 循环结束 左孩子输出结束
+        System.out.print(s.peek().val); // 左孩子输出完毕 接着输出当前节点
+        root = s.pop().right;
         }
-}
+        }
 ```
 
 ##### 后序遍历
-
+对于当前结点，先输出它的左孩子，然后输出它的右孩子，最后输出该结点
 ```java
-void postorder(TreeNode root){
-        if(root!=null) {
+// 后序遍历 递归
+    void postorder(TreeNode root){
+            if(root==null) {
+            return;
+            }
             postorder(root.left);
             postorder(root.right);
             System.out.print(root.val);
-        }
-}
+            }
 ```
 #### 广度优先遍历
 todo

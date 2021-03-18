@@ -1,5 +1,7 @@
 package _07_二叉树和递归._0257;
 
+import data.struct.tree.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,23 +55,5 @@ public class Solution {
         binaryTree(root.left, list, str);
         binaryTree(root.right, list, str);
 
-    }
-}
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
