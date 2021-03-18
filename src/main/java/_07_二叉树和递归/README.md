@@ -1,6 +1,7 @@
 # 二叉树和递归
 
-> [公式编辑器](https://www.codecogs.com/latex/eqneditor.php)
+> - [公式编辑器](https://www.codecogs.com/latex/eqneditor.php)
+> - 参考[二叉树操作（面试必备）](https://segmentfault.com/a/1190000008850005)
 
 ## 二叉树
 
@@ -95,7 +96,7 @@ todo
 ### 转换
 
 #### 数组生成二叉树
-数组生成二叉树，对于节点i（从0开始），在数组中为位置为`2*i`，左节点为`2*i+1`，右节点为`2*i+2`。
+广度优先遍历数组生成二叉树，对于节点i（从0开始），在数组中为位置为`2*i`，左节点为`2*i+1`，右节点为`2*i+2`。
 
 ```java
 TreeNode createTree(Integer[] nums) {
