@@ -40,20 +40,39 @@ class SolutionTest {
      * @return
      */
     TreeNode arr2Tree(Integer[] nums) {
-        return createNode(nums, 1);
+        return createNode1(nums, 0);
+    }
+    // 根节点从1开始
+    TreeNode createNode(Integer[] nums,int index){
+        // index超出数组长度 返回null
+        if(index>nums.length) {
+            return null;
+        }
+        // index为1时创建跟节点
+        Integer value = nums[index-1];
+        if(value == null) {
+            return null;
+        }
+        TreeNode node=new TreeNode(value);
+        node.left=createNode(nums,2*index);
+        node.right=createNode(nums,2*index+1);
+        return node;
     }
 
-    TreeNode createNode(Integer[] nums, int index) {
-        if (index > nums.length) {
+    // 根节点从0开始
+    TreeNode createNode1(Integer[] nums,int index){
+        // index超出数组长度 返回null
+        if(index>nums.length-1) {
             return null;
         }
-        Integer value = nums[index - 1];
-        if (value == null) {
+        // index为1时创建跟节点
+        Integer value = nums[index];
+        if(value == null) {
             return null;
         }
-        TreeNode node = new TreeNode(value);
-        node.left = createNode(nums, 2 * index);
-        node.right = createNode(nums, 2 * index + 1);
+        TreeNode node=new TreeNode(value);
+        node.left=createNode1(nums,2*index+1);
+        node.right=createNode1(nums,2*index+2);
         return node;
     }
 
