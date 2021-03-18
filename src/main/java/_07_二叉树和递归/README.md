@@ -89,29 +89,29 @@ todo
 ### 转换
 
 #### 数组生成二叉树
-前序遍历的数组生成二叉树，对于节点i，在数组中为位置为
+前序遍历的数组生成二叉树，对于节点i（从0开始），在数组中为位置为`2*i`，左节点为`2*i+1`，右节点为`2*i+2`。
 
 ```java
 TreeNode createTree(Integer[] nums) {
     if(nums==null) {
         return null;
     }
-    return createNode(nums,1);
+    return createNode(nums,0);
 }
 
 TreeNode createNode(Integer[] nums,int index){
         // index超出数组长度 返回null
-        if(index>nums.length) {
+        if(index>nums.length-1) {
             return null;
         }
         // index为1时创建跟节点
-        Integer value = nums[index-1];
+        Integer value = nums[index];
         if(value == null) {
             return null;
         }
         TreeNode node=new TreeNode(value);
-        node.left=createNode(nums,2*index);
-        node.right=createNode(nums,2*index+1);
+        node.left=createNode(nums,2*index+1);
+        node.right=createNode(nums,2*index+2);
         return node;
 }
 
