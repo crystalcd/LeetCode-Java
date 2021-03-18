@@ -17,10 +17,15 @@ class SolutionTest {
     @MethodSource("_0257")
     void binaryTreePaths(Integer[] nums, String[] ans) {
         TreeNode root = arr2Tree(nums);
+        System.out.println("前序遍历");
+        preorder(root);
+        System.out.println("\n中序遍历");
+        inorder(root);
+        System.out.println("\n后序遍历");
+        postorder(root);
         Solution solution = new Solution();
         List<String> strings = solution.binaryTreePaths1(root);
         assertArrayEquals(ans,strings.toArray());
-
     }
 
     static Stream<Arguments> _0257() {
@@ -28,6 +33,31 @@ class SolutionTest {
                 Arguments.of(new Integer[]{1, 2, 3, null, 5}, new String[]{"1->2->5", "1->3"}),
                 Arguments.of(new Integer[]{1}, new String[]{"1"})
         );
+    }
+
+    // 前序遍历
+    void preorder(TreeNode root){
+        if(root!=null) {
+            System.out.print(root.val);
+            preorder(root.left);
+            preorder(root.right);
+        }
+    }
+    // 中序遍历
+    void inorder(TreeNode root){
+        if(root!=null) {
+            inorder(root.left);
+            System.out.print(root.val);
+            inorder(root.right);
+        }
+    }
+    // 后序遍历
+    void postorder(TreeNode root){
+        if(root!=null) {
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.val);
+        }
     }
 
     /**

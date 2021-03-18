@@ -59,9 +59,11 @@ class TreeNode {
 
 ```java
 void preorder(TreeNode root){
-        System.out.print(root.val);
-        preorder(root.left);
-        preorder(root.right);
+        if(root!=null) {
+            System.out.println(root.val);
+            preorder(root.left);
+            preorder(root.right);
+        }
 }
 ```
 
@@ -69,9 +71,11 @@ void preorder(TreeNode root){
 
 ```java
 void inorder(TreeNode root){
+        if(root!=null) {
         inorder(root.left);
         System.out.print(root.val);
         inorder(root.right);
+        }
 }
 ```
 
@@ -79,9 +83,11 @@ void inorder(TreeNode root){
 
 ```java
 void postorder(TreeNode root){
-        postorder(root.left);
-        postorder(root.right);
-        System.out.print(root.val);
+        if(root!=null) {
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.val);
+        }
 }
 ```
 #### 广度优先遍历
