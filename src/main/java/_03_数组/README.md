@@ -26,3 +26,10 @@ class Array {
 }
 
 ```
+
+## Java API
+```java
+Arrays.sort(intervals,(a,b)->a[1]-b[1]); // 改变原数组
+Arrays.stream(intervals).sorted((a,b)->a[1]-b[1]); // 不改变原数组
+
+```
