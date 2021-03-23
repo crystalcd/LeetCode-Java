@@ -1,6 +1,15 @@
 package _10_贪心算法._0605;
 
 public class Solution {
+    /**
+     * 每个地方都种满花
+     * 三个0中间可以种花
+     * 最左边为0 右边为0可以种花
+     * 最右边为0 左边为0可以种花
+     * @param flowerbed
+     * @param n
+     * @return
+     */
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
         int rs = 0;
         for(int i=0; i< flowerbed.length; i++) {
