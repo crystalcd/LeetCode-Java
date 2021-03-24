@@ -1,6 +1,5 @@
 package _05_链表._0142;
 
-import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 import data.struct.linked.ListNode;
 
 public class Solution {
