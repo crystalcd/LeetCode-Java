@@ -1,5 +1,8 @@
 package _02_二分法._0069;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Solution {
     public int mySqrt(int x) {
         if(x==0) {
@@ -8,16 +11,17 @@ public class Solution {
         int l=1,r=x;
         int mid,sqrt;
         while(l<=r) {
-            mid = l+(r-l)/2;
-            sqrt = x/mid;
-            if(sqrt==mid) {
+            mid = l + (r - l) / 2;
+            sqrt = x / mid;
+            if (sqrt == mid) {
                 return sqrt;
-            }else if(sqrt>mid) {
-                l=mid+1;
-            }else {
-                r=mid-1;
+            } else if (sqrt > mid) {
+                l = mid + 1;
+            } else {
+                r = mid - 1;
             }
         }
+        List<Integer> a = new ArrayList<>();
         return r;
     }
 }
