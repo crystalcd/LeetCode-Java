@@ -139,8 +139,29 @@ void preorder(TreeNode root){
             System.out.print(root.val);
             }
 ```
-#### 广度优先遍历
-todo
+#### 广度优先遍历(BFS)
+需要使用到队列
+将root放入队列，当队列不为空的时候循环，输出当前队列第一个元素，将第一个元素的左孩子放入队列，右孩子放入队列，然后将第一个元素出队列
+```java
+public void bfs(TreeNode root) {
+  if(root==null) {
+    return;
+  }
+  Queue<TreeNode> q= new ArrayDeque<>();
+  q.add(root);
+  while(!q.isEmpty()) {
+    TreeNode cur = q.peek();
+    System.out.println(cur.val);
+    if(cur.left!=null) {
+      q.add(cur.left);
+    }
+    if(cur.right!=null) {
+      q.add(cur.right);
+    }
+  }
+  q.poll();
+}
+```
 ### 转换
 
 #### 数组生成二叉树
@@ -171,3 +192,10 @@ TreeNode createNode(Integer[] nums,int index){
 }
 
 ```
+
+## 二叉搜索树（BinarySearchTree BST）
+
+特性
+
+1. 对于BST的每个节点node，左子树节点的值都比node的值要小，右子树节点的值都比node的值要大。
+2. 对于BST的每一个节点node，它的左侧子树和右侧子树都是BST。
