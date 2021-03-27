@@ -11,7 +11,6 @@ public class Solution {
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         List<TreeNode> rs = new ArrayList<>();
         Map<String,Integer> map = new HashMap<>();
-
         find(root,rs,map);
         return rs;
     }

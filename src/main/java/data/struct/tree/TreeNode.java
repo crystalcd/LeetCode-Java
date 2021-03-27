@@ -1,6 +1,8 @@
 package data.struct.tree;
 
+import java.util.ArrayDeque;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class TreeNode {
@@ -19,6 +21,25 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    public static void bfs(TreeNode root) {
+        if(root==null) {
+            return;
+        }
+        Queue<TreeNode> q = new ArrayDeque<>();
+        q.add(root);
+        while(!q.isEmpty()) {
+            TreeNode cur = q.peek();
+            System.out.println(cur.val);
+            if(cur.left!=null){
+                q.add(cur.left);
+            }
+            if(cur.right!=null) {
+                q.add(cur.right);
+            }
+            q.poll();
+        }
     }
 
     // 前序遍历 递归
