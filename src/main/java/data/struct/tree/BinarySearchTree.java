@@ -25,6 +25,27 @@ public class BinarySearchTree {
     }
 
     /**
+     * 验证树是否为二叉搜索树
+     * @param root
+     * @return
+     */
+    public static boolean isValidBst(TreeNode root) {
+        return isValidBst(root,null,null);
+    }
+    static boolean isValidBst(TreeNode root,TreeNode min,TreeNode max) {
+        if(root==null) {
+            return true;
+        }
+        if(min!=null&&root.val<=min.val) {
+            return false;
+        }
+        if(max!=null&&root.val>=max.val) {
+            return false;
+        }
+        return isValidBst(root.left,min,root)&&isValidBst(root.right,root,max);
+    }
+
+    /**
      * 二叉搜索树删除给定元素
      * @param root
      * @param target
