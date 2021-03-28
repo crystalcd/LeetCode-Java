@@ -23,6 +23,10 @@ public class TreeNode {
         this.right = right;
     }
 
+    /**
+     * 广度优先遍历
+     * @param root
+     */
     public static void bfs(TreeNode root) {
         if(root==null) {
             return;
