@@ -25,13 +25,13 @@ public class Solution {
         if (root == null) {
             return null;
         }
-        // 翻转左子树
-        TreeNode left = invertTree(root.left);
-        // 翻转右子树
-        TreeNode right = invertTree(root.right);
+        // 当前节点 交换左右节点
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
 
-        root.left = right;
-        root.right = left;
+        invertTree(root.left);
+        invertTree(root.right);
 
         return root;
     }

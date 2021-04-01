@@ -8,6 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Solution {
+    /**
+     * 652. 寻找重复的子树
+     *
+     * 前序遍历 存入map 出现重复 将节点加入结果
+     * @param root
+     * @return
+     */
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         List<TreeNode> rs = new ArrayList<>();
         Map<String,Integer> map = new HashMap<>();

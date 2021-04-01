@@ -17,6 +17,7 @@ public class Solution {
 
     /**
      * 完全二叉树的h-1层为满二叉树 只需要求满二叉树加上最后一层节点
+     * 满二叉的节点数 高为h 节点数=2^h-1;
      * @param root
      * @return
      */

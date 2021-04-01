@@ -21,7 +21,7 @@ class SolutionTest {
 
     static Stream<Arguments> _0078() {
         return Stream.of(
-              Arguments.of(new int[]{1,2,3})
+              Arguments.of(new int[]{1,2,2})
         );
     }
 }

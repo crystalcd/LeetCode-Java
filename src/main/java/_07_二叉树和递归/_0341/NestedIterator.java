@@ -9,6 +9,10 @@ public class NestedIterator implements Iterator<Integer> {
     Iterator<Integer> it = null;
 
     /**
+     * 341. 扁平化嵌套列表迭代器
+     *
+     * todo 后序优化 惰性迭代器
+     *
      * 类似一个多叉树的遍历，只取其中的叶子节点。
      * 这种方式有个弊端，入参很大时会撑爆内存
      * @param nestedList

@@ -4,6 +4,12 @@ import data.struct.tree.TreeNode;
 
 public class Solution {
     /**
+     * 236. 二叉树的最近公共祖先
+     * base case：
+     *          1. 根节点为null
+     *          2. p 或者 q 等于根节点，那最近公共祖先肯定是root
+     * 后序遍历 从树的下往上找
+     *
      * 寻找p和q的最近公共祖先
      * @param root
      * @param p

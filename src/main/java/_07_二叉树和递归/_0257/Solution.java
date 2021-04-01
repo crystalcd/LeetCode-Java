@@ -6,6 +6,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
+
+
+    List<String> rs = new ArrayList<>();
+
+    /**
+     * 257. 二叉树的所有路径
+     *
+     * @param root
+     * @return
+     */
+    public List<String> binaryTreePaths2(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        path(root,sb);
+        return rs;
+    }
+
+    public void path(TreeNode root,StringBuilder sb) {
+        if(root==null) {
+            return ;
+        }
+        if("".equals(sb.toString())) {
+            sb.append(root.val);
+        }else {
+            sb.append("->").append(root.val);
+        }
+        if(root.left==null&&root.right==null) {
+            rs.add(sb.toString());
+            return;
+        }
+
+        path(root.left,new StringBuilder(sb));
+        path(root.right,new StringBuilder(sb));
+    }
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> rs = new ArrayList<>();
         if(root == null) {
