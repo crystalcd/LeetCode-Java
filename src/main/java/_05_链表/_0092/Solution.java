@@ -5,6 +5,7 @@ import data.struct.linked.ListNode;
 public class Solution {
     ListNode successor = null; // 记录后继节点
     /**
+     * 92. 反转链表 II
      *  迭代
      *  先找到需要转换的节点cur前的一个节点为pre, 当前cur的下一个节点为tmp，让cur的next指向tmp的next，
      *  tmp的next指向pre的next，pre的next执行tmp。
