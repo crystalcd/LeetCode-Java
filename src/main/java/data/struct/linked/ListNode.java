@@ -55,4 +55,28 @@ public class ListNode {
         }
         return rs;
     }
+
+    /**
+     * 链表的前序遍历
+     * @param head
+     */
+    public static void preorder(ListNode head) {
+        if(head==null) {
+            return;
+        }
+        System.out.println(head.val);
+        preorder(head.next);
+    }
+
+    /**
+     * 链表的后序遍历
+     * @param head
+     */
+    public static void postorder(ListNode head) {
+        if(head==null) {
+            return;
+        }
+        postorder(head.next);
+        System.out.println(head.val);
+    }
 }
