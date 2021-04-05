@@ -27,5 +27,8 @@ public class Solution {
     /**
      * 最小公倍数
      */
+    public int lcm(int a,int b) {
+        return a*b/gcd(a,b);
+    }
 }
 
