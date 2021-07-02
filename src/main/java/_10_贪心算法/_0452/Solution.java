@@ -14,6 +14,12 @@ public class Solution {
         if(points.length==0) {
             return 0;
         }
+        Arrays.sort(points,(a,b)->{
+            if(a[0]==b[0]) {
+                return a[1]-b[1];
+            }
+            return a[0]-b[0];
+        });
         Arrays.sort(points, (a, b) -> a[0] - b[0]);
         Arrays.stream(points).forEach(a -> System.out.println(a[0] + "-" + a[1]));
         int[] temp = points[0];

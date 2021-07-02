@@ -164,8 +164,8 @@ public void bfs(TreeNode root) {
     if(cur.right!=null) {
       q.add(cur.right);
     }
+    q.poll();
   }
-  q.poll();
 }
 ```
 ### 转换

@@ -7,6 +7,26 @@
 - 快慢指针 Floyd判圈算法
 - 滑动窗口 
 
+## 滑动窗口模版
+```java
+class A {
+    public void window(String s) {
+        int l=0;r=0;
+        while(r<s.length()) {
+            // 增大窗口
+            window.add(s.charAt(r));
+            r++;
+            
+            while(window needs shrink) {
+                // 缩小窗口
+                window.remove(s.charAt(l));
+                l++;
+            }
+        }
+    }
+}
+```
+
 ## 删除元素
 使用两个指针，一个指针用来记录位置，另一个用来遍历。
 

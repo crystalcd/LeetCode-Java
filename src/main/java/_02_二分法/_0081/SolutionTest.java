@@ -14,13 +14,15 @@ class SolutionTest {
     @ParameterizedTest
     @MethodSource("_0081")
     void search(int[] nums,int target,boolean ans) {
-        assertEquals(ans,Solution.search(nums,target));
+        assertEquals(ans,Solution.search1(nums,target));
     }
 
     static Stream<Arguments> _0081() {
         return Stream.of(
                 Arguments.of(new int[]{2,5,6,0,0,1,2},0,true),
-                Arguments.of(new int[]{1,0,1,1,1},0,true)
+                Arguments.of(new int[]{1,0,1,1,1},0,true),
+                Arguments.of(new int[]{1,1,1,1,1,1,1,1,1,13,1,1,1,1,1,1,1,1,1,1,1,1},13,true),
+                Arguments.of(new int[]{3,1},1,true)
         );
     }
 }

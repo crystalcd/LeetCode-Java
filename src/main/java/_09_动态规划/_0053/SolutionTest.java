@@ -1,4 +1,4 @@
-package _08_递归和回溯._0130;
+package _09_动态规划._0053;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,14 +12,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class SolutionTest {
 
     @ParameterizedTest
-    @MethodSource("_0130")
-    void solve(char[][] strs) {
-        new Solution().solve(strs);
+    @MethodSource("_0053")
+    void maxSubArray(int[] nums,int expected) {
+        int i = new Solution().maxSubArray(nums);
+        assertEquals(expected,i);
     }
 
-    static Stream<Arguments> _0130() {
+    static Stream<Arguments> _0053() {
         return Stream.of(
-                Arguments.of((Object) new char[][]{{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}})
+                Arguments.of(new int[]{-2,1,-3,4,-1,2,1,-5,4},6)
         );
     }
 }
