@@ -1,4 +1,4 @@
-package _98juc;
+package _98_juc;
 
 public class RunObjectInstanceTest {
     public static void main(String[] args) {

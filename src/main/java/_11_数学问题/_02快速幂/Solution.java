@@ -1,4 +1,4 @@
-package _11数学问题._02快速幂;
+package _11_数学问题._02快速幂;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package _99笔试;
+package _99_笔试;
 
 import java.util.Scanner;
 

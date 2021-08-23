@@ -1,4 +1,4 @@
-package _98juc;
+package _98_juc;
 
 public class ThreadB extends Thread{
     private Task task;

@@ -1,4 +1,4 @@
-package _98juc;
+package _98_juc;
 
 public class ThreadD extends Thread{
 

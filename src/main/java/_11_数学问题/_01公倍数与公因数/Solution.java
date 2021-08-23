@@ -1,4 +1,4 @@
-package _11数学问题._01公倍数与公因数;
+package _11_数学问题._01公倍数与公因数;
 
 public class Solution {
 
